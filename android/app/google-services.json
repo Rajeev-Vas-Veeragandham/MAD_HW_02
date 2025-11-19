@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "832707779202",
+    "project_id": "hw2-chatboards-app",
+    "storage_bucket": "hw2-chatboards-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832707779202:android:8444239ef893eece2fb29b",
+        "android_client_info": {
+          "package_name": "com.example.hw_02_chatboards_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBhx_ET-m1J-1tFhcLr44DnAaZUJKghVE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
