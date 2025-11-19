@@ -106,24 +106,28 @@ class AuthService {
 
   static User? get currentUser => _auth.currentUser;
 
- // GET USER DATA
-static Future<Map<String, dynamic>?> getUserData() async {
-  if (_auth.currentUser == null) {
-    print('No current user found');
-    return null;
-  }
-  
-  try {
-    var doc = await _db.collection("users").doc(_auth.currentUser!.uid).get();
-    if (doc.exists && doc.data() != null) {
-      print('User data retrieved successfully: ${doc.data()}');
-      return doc.data();
-    } else {
-      print('No user data found in Firestore for UID: ${_auth.currentUser!.uid}');
+  // GET USER DATA
+  static Future<Map<String, dynamic>?> getUserData() async {
+    if (_auth.currentUser == null) {
+      print('No current user found');
       return null;
     }
-  } catch (e) {
-    print('Error getting user data: $e');
-    return null;
+    
+    try {
+      var doc = await _db.collection("users").doc(_auth.currentUser!.uid).get();
+      if (doc.exists && doc.data() != null) {
+        print('User data retrieved successfully: ${doc.data()}');
+        return doc.data();
+      } else {
+        print('No user data found in Firestore for UID: ${_auth.currentUser!.uid}');
+        return null;
+      }
+    } catch (e) {
+      print('Error getting user data: $e');
+      return null;
+    }
   }
+
+  // Check if user is logged in
+  static bool get isLoggedIn => _auth.currentUser != null;
 }
